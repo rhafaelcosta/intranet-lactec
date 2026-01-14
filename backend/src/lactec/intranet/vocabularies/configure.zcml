@@ -6,4 +6,9 @@
       component=".estados.vocab_estados"
       />
 
+  <utility
+      name="lactec.intranet.vocabulary.cargos"
+      component=".cargos.vocab_cargos"
+      />
+
 </configure>
