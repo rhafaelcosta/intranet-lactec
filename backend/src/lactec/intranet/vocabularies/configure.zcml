@@ -11,4 +11,8 @@
       component=".cargos.vocab_cargos"
       />
 
+  <utility
+      name="lactec.intranet.vocabulary.areas"
+      component=".areas.vocab_areas"
+      />
 </configure>
