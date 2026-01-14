@@ -70,4 +70,19 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="lactec.intranet:default"
+      source="20260114002"
+      destination="20260114003"
+      >
+    <genericsetup:upgradeDepends
+        title="Indexa os campos Area e Cargo "
+        import_steps="catalog"
+        />
+    <upgradeStep
+        title="Reindexa o tipo Pessoa"
+        handler=".catalog.reindexa_pessoa"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
