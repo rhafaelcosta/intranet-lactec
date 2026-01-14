@@ -46,6 +46,8 @@ class TestArea:
             "plone.shortname",
             "plone.excludefromnavigation",
             "plone.versioning",
+            "lactec.intranet.behavior.contato",
+            "lactec.intranet.behavior.endereco",
             "volto.blocks",
             "plone.constraintypes",
             "volto.preview_image",
