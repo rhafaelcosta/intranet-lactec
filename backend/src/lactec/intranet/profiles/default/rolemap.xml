@@ -8,5 +8,14 @@
       <role name="Manager" />
       <role name="Site Administrator" />
     </permission>
+
+    <permission acquire="False"
+                name="lactec.intranet: Add Pessoa"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+    </permission>
+
   </permissions>
+
 </rolemap>

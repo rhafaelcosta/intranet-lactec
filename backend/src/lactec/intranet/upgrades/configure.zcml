@@ -55,4 +55,19 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="lactec.intranet:default"
+      source="20260114001"
+      destination="20260114002"
+      >
+    <genericsetup:upgradeDepends
+        title="Adiciona o tipo Pessoa"
+        import_steps="typeinfo"
+        />
+    <genericsetup:upgradeDepends
+        title="Aplica permissionamento para tipo de conteúdo Pessoa"
+        import_steps="rolemap"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>

@@ -5,4 +5,9 @@
   <object meta_type="Dexterity FTI"
           name="Area"
   />
+
+  <object meta_type="Dexterity FTI"
+          name="Pessoa"
+  />
+
 </object>
