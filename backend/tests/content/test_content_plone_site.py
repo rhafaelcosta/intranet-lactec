@@ -1,5 +1,6 @@
 from AccessControl.users import nobody
 from plone import api
+from plone.dexterity.fti import DexterityFTI
 
 import pytest
 
@@ -35,7 +36,7 @@ class TestPloneSite:
         assert behavior in get_behaviors(CONTENT_TYPE)
 
 
-class TestPloneSite:
+class TestPloneSiteContent:
     """Testa que o Plone Site está configurado corretamente."""
 
     def test_workflow_state(self, portal):
