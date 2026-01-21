@@ -3,6 +3,8 @@ from lactec.intranet.content.area import Area
 from plone import api
 from plone.dexterity.fti import DexterityFTI
 from zope.component import createObject
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
 
 import pytest
 
@@ -115,3 +117,23 @@ class TestArea:
         assert grupo is not None
         assert grupo.getProperty("title") == f"Área {area.title}: Editores"
         local_roles = api.group.get_roles(group=grupo, obj=area)
+
+    def test_subscriber_area_modified(self, area_payload):
+        container = self.portal
+        with api.env.adopt_roles(["Manager"]):
+            area = api.content.create(
+                container=container,
+                **area_payload,
+            )
+
+        assert area.exclude_from_nav is False
+        area.description = ""
+        # Area é o objeto que foi modificado
+        notify(ObjectModifiedEvent(area))
+
+        assert area.exclude_from_nav is True
+
+        area.description = "sadasdasdsa"
+        notify(ObjectModifiedEvent(area))
+
+        assert area.exclude_from_nav is False
