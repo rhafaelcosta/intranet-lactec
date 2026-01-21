@@ -62,5 +62,3 @@ class TestPloneSite:
             assert has_permission is expected, (
                 f"Erro: Permissão {permission} para usuário Anônimo: {has_permission}"
             )
-
-   
